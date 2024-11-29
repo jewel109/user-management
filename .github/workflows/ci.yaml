@@ -24,3 +24,7 @@ jobs:
         run: pnpm install
       - name: Run Tests
         run: pnpm run test
+      - name: formatting code
+        run: pnpm run format
+      - name: linting code
+        run: pnpm run lint
