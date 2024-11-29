@@ -1,0 +1,26 @@
+name: Our server will have linted, formatted and tested after every commit
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: pnpm adding
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - name: install dependencies
+        run: pnpm install
+      - name: Run Tests
+        run: pnpm run test
