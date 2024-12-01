@@ -27,5 +27,6 @@ import { SuccessInterceptor } from './success.interceptor';
     }),
   ],
   controllers: [AppController],
+  providers: [AppService, { provide: APP_INTERCEPTOR, useClass: SuccessInterceptor }],
 })
 export class AppModule { }
