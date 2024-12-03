@@ -1,12 +1,14 @@
-name: Our server will have linted, formatted and tested after every commit
+name: Merge request CI
 
 on:
-  push:
+  pull_request:
     branches:
       - master
+    types: [closed]
 
 jobs:
-  build:
+  build-and-test:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository
