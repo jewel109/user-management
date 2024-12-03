@@ -6,24 +6,25 @@ import { CreateUserDto } from './dto/createUser.dto';
 
 @Controller('user')
 export class UserController {
-
-  constructor(private readonly userService: UserService) { }
+  constructor(private readonly userService: UserService) {}
 
   @Get('users')
   async getUsers(): Promise<IResponse<User[]>> {
-    const users = await this.userService.findAll()
+    const users = await this.userService.findAll();
     // console.log(users)
     if (users.length === 0) {
-      throw new NotFoundException("No user found")
+      throw new NotFoundException('No user found');
     }
-    return { data: users }
+    return { data: users };
   }
 
   @Post('addUser')
-  async createUser(@Body() createUserDto: CreateUserDto): Promise<IResponse<User>> {
-    const data = await this.userService.createUser(createUserDto)
+  async createUser(
+    @Body() createUserDto: CreateUserDto,
+  ): Promise<IResponse<User>> {
+    const data = await this.userService.createUser(createUserDto);
     // console.log(data)
 
-    return { data }
+    return { data };
   }
 }
