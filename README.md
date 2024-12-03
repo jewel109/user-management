@@ -17,11 +17,11 @@ You are now `<project-name>` dir.
 Run the database by running `docker compose up --build`
 Now run `pnpm run start:dev` to run the server.
 You can see other available command in `package.json` file.
-Your server is running now on the port number you provided in `.env` file.
+Your server is running now on the port *3232*.
 Now run the tests by `pnpm test`
 Now lint by `pnpm lint` and format by `pnpm format`
 
-# end point
+# End point
 
 You can see the list of user by running `curl http://localhost:3232/user/users`
 
