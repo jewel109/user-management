@@ -3,7 +3,7 @@ name: Our server will have linted, formatted and tested after every commit
 on:
   push:
     branches:
-      - master
+      - "*"
 
 jobs:
   build:
