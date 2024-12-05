@@ -34,20 +34,3 @@ jobs:
         run: snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
-  # security:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@master
-  #     - uses: snyk/actions/setup@master
-  #     - name: setup nodejs
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: "22"
-  #         cache: "npm"
-  #     - name: Install Snyk CLI
-  #       run: npm install -g snyk
-  #     - name: Snyk test
-  #       run: snyk test
-  #       env:
-  #         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
