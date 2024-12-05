@@ -28,9 +28,13 @@ jobs:
         run: pnpm run format
       - name: linting code
         run: pnpm run lint
-      - name: Install Snyk CLI
-        run: pnpm install -g snyk
-      - name: Snyk test
-        run: snyk test
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      # - name: Install Snyk CLI
+      #   run: pnpm install -g snyk
+      # - name: Snyk test
+      #   run: snyk test
+      #   env:
+      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
